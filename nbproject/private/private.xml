@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/witek/MPLABXProjects/er1.X/main.c</file>
-            <file>file:/home/witek/MPLABXProjects/er1.X/mcc_generated_files/pin_manager.c</file>
-            <file>file:/home/witek/MPLABXProjects/er1.X/mcc_generated_files/uart1.c</file>
-            <file>file:/home/witek/MPLABXProjects/er1.X/mcc_generated_files/tmr3.c</file>
+            <file>file:/home/kwmatik/MPLABXProjects/p48_urt_dm/mcc_generated_files/dma.h</file>
+            <file>file:/home/kwmatik/MPLABXProjects/p48_urt_dm/mcc_generated_files/tmr1.c</file>
+            <file>file:/home/kwmatik/MPLABXProjects/p48_urt_dm/main.c</file>
+            <file>file:/home/kwmatik/MPLABXProjects/p48_urt_dm/mcc_generated_files/dma.c</file>
         </group>
     </open-files>
 </project-private>

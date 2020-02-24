@@ -41,12 +41,18 @@ IPC24bits.DMA0IS = 0 ; /*set interrupt subpriority*/
 
 }
 
+
+
+/* 
 void __ISR(_DMA0_VECTOR) __DMA0Interrupt(void)
 {
 PORTBbits.RB6 = 1 ;     /*set LED ON*/
-DCH0INTCLR = 0xFF;      /*clear existing all DMA0 Interrupt flag*/
-IFS3bits.DMA0IF = 0 ;   /*clear existing DMA0 channel 0 interrupt flag, datasheet page 66*/
-}
+//DCH0INTCLR = 0xFF;      /*clear existing all DMA0 Interrupt flag*/
+//IFS3bits.DMA0IF = 0 ;   /*clear existing DMA0 channel 0 interrupt flag, datasheet page 66*/
+//}
+
+//*/
+        
 
 
 

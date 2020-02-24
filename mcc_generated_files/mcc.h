@@ -50,12 +50,15 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "watchdog.h"
+#include "uart1.h"
 #include "tmr3.h"
+#include "dma.h"
+#include "crc.h"
 #include "uart2.h"
+#include "tmr1.h"
+#include "watchdog.h"
 #include "interrupt_manager.h"
 #include "exceptions.h"
-#include "uart1.h"
 #ifndef _XTAL_FREQ
 #define _XTAL_FREQ  12000000UL
 #endif

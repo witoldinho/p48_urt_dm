@@ -55,9 +55,19 @@ void INTERRUPT_Initialize (void)
     // Enable Multi Vector Configuration
     INTCONbits.MVEC = 1;
     
+    //    DMA0I: DMA channel 0
+    //    Priority: 1
+        IPC24bits.DMA0IP = 1;
+    //    Sub Priority: 0
+        IPC24bits.DMA0IS = 0;
     //    TI: Timer 3
     //    Priority: 1
         IPC4bits.T3IP = 1;
     //    Sub Priority: 0
         IPC4bits.T3IS = 0;
+    //    TI: Timer 1
+    //    Priority: 1
+        IPC4bits.T1IP = 1;
+    //    Sub Priority: 0
+        IPC4bits.T1IS = 0;
 }

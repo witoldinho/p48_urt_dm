@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=er1.X
+PROJECTNAME=p48_urt_dm
 
 # Active Configuration
 DEFAULTCONF=default

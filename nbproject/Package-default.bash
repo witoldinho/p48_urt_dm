@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/er1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=er1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=er1.x/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/p48_urt_dm.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=p48_urt_dm.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=p48urtdm/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/er1.x/bin
+makeDirectory ${TMPDIR}/p48urtdm/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/er1.x.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/p48urtdm.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/er1.x.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/p48urtdm.tar *
 checkReturnCode
 
 # Cleanup

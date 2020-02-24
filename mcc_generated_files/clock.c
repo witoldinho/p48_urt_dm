@@ -62,8 +62,9 @@ void CLOCK_Initialize(void)
     // Wait for Clock switch to occur 
     while(OSCCONbits.OSWEN == 1); 
     while(CLKSTATbits.SPLLRDY != 1);
-    // ON disabled; DIVSWEN disabled; RSLP disabled; ROSEL SYSCLK; OE disabled; SIDL disabled; RODIV 0; 
-    REFO1CON = 0x00;
+    // ON enabled; DIVSWEN disabled; RSLP disabled; ROSEL SYSCLK; OE enabled; SIDL disabled; RODIV 0; 
+    REFO1CON = 0x9000;
+    while(!REFO1CONbits.ACTIVE & REFO1CONbits.ON);
     // ROTRIM 0; 
     REFO1TRIM = 0x00;
 }
