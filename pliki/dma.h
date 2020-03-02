@@ -10,10 +10,13 @@
 #ifndef _DMA_H
 #define _DMA_H
 #include <stdint.h> /*uint8_t etc.*/
+#include <stdio.h>
 
 //char myWriteBuffer[] = "Witaj DMA"; /*bufor nadawczy*/
 char myReadBuffer[10] ; /*bufor odbiorczy*/
 void DMA0_Initialize (void);
+void swiatlo_go(void);
+void light_go(uint8_t *ramka);
 
 
 #endif

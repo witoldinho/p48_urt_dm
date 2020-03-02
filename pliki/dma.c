@@ -40,8 +40,55 @@ IPC24bits.DMA0IS = 0 ; /*set interrupt subpriority*/
  IFS3bits.DMA0IF = 0;
 
 }
+void swiatlo_go(void)
+{
+    printf(" sw  IN "); 
+    IO_RD0_SetHigh();
+    while(!(DMA_StatusGet(DMA_CHANNEL_0) & DMA_BLOCK_TX_COMPLETE));
+      printf("\n\r stan dma po sw in [dh0int-%08X,SSA-%08X, DSA %08X , ] \n\r",DCH0INT,DCH0SSA,DCH0DSA);
+     
+      //DMACONbits.ON = 0;
+    //DMACONbits.CHEN=1;
+    DCH0CONbits.CHEN=0;
+      
+       U1STAbits.UTXINV=1;
+        delayUs(90);
+        U1STAbits.UTXINV=0;
+        delayUs(16);
+       // UART1_Write(0);
+        
+     DCH0INTCLR=0xff;
+    // DMACONbits.ON = 1;
+     DCH0CONbits.CHEN=1;
+     printf(" sw OUT "); 
+    //DMACONbits.ON=0;
+    //DCH0CONbits.CHEN=0;
+}
 
-
+void light_go(uint8_t *ramka)
+{
+    printf(" sw light  IN "); 
+    IO_RD0_SetHigh();
+    while(!(DMA_StatusGet(DMA_CHANNEL_0) & DMA_BLOCK_TX_COMPLETE));
+      printf("\n\r stan dma po sw in [dh0int-%08X,SSA-%08X, DSA %08X , ] \n\r",DCH0INT,DCH0SSA,DCH0DSA);
+     
+      DMACONbits.ON = 0;
+    //DMACONbits.CHEN=1;
+    DCH0CONbits.CHEN=0;
+    DCH0SSA=0;
+    DCH0SSA=((uint32_t)& ramka) &  0x1FFFFFFF ; 
+    DCH0SSA=513;
+       U1STAbits.UTXINV=1;
+        delayUs(90);
+        U1STAbits.UTXINV=0;
+        delayUs(16);
+       // UART1_Write(0);
+        
+     DCH0INTCLR=0xff;
+     DMACONbits.ON = 1;
+     DCH0CONbits.CHEN=1;
+     printf(" sw light OUT "); 
+}
 
 /* 
 void __ISR(_DMA0_VECTOR) __DMA0Interrupt(void)
